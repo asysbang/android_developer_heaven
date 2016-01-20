@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DeveloperHeavn</string>
     <string name="code_async_async_task">AsyncTask</string>
+    <string name="code_ui_popup_window">Popup Window</string>
 </resources>

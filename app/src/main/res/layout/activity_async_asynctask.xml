@@ -4,75 +4,112 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/bar1"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <LinearLayout
+        android:id="@+id/taskContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
+        android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/bar2"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        <ProgressBar
+            android:id="@+id/bar1"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar2"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar3"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar4"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar5"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+
+        <ProgressBar
+            android:id="@+id/bar6"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar7"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar8"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar9"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <ProgressBar
+            android:id="@+id/bar10"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+    </LinearLayout>
+
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
+        android:onClick="stopAll"
+        android:text="STOP ALL" />
 
-    <ProgressBar
-        android:id="@+id/bar3"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
+        android:onClick="startNormal"
+        android:text="START NORMAL" />
 
-    <ProgressBar
-        android:id="@+id/bar4"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
+        android:onClick="startSerial"
+        android:text="START SERIAL" />
 
-    <ProgressBar
-        android:id="@+id/bar5"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
+        android:onClick="startThreadPool"
+        android:text="START THREAD_POOL" />
 
-
-    <ProgressBar
-        android:id="@+id/bar6"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
-
-    <ProgressBar
-        android:id="@+id/bar7"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
-
-    <ProgressBar
-        android:id="@+id/bar8"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
-
-    <ProgressBar
-        android:id="@+id/bar9"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
-
-    <ProgressBar
-        android:id="@+id/bar10"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dip" />
-
+        android:onClick="startCachedThreadPool"
+        android:text="START CachedThreadPool" />
 </LinearLayout>

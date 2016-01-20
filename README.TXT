@@ -11,3 +11,6 @@
 
 
 3.loader  and  loadermanager
+
+
+4.logical     wifi scan list   wifi 状态变化   连接开始  连接成功

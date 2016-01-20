@@ -23,7 +23,15 @@
                 <action android:name="asysbang.action.CODE" />
                 <category android:name="asysbang.category.CODE" />
             </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".ui.CodePopupWindow"
+            android:label="@string/code_ui_popup_window">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
         </activity>
     </application>
 

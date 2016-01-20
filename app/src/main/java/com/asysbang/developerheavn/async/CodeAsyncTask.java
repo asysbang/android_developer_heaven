@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.asysbang.developerheavn.R;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,76 +23,58 @@ public class CodeAsyncTask extends Activity {
 
     private static final String TAG = "CodeAsyncTask";
 
+    private List<ProgressBarTask> mTasks = new ArrayList<ProgressBarTask>();
+
+    private Executor mExecutor = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_async_asynctask);
-//        final Executor executor = Executors.newCachedThreadPool();
-        final Executor executor = AsyncTask.THREAD_POOL_EXECUTOR;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar1), 1).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar2), 2).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar3), 3).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar4), 4).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar5), 5).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar6), 6).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar7), 7).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar8), 8).executeOnExecutor(executor);
-            }
-        }).start();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar9), 9).executeOnExecutor(executor);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new ProgressBarTask((ProgressBar) findViewById(R.id.bar10), 10).executeOnExecutor(executor);
-            }
-        }).start();
-
+        initAllTask();
     }
 
+    private void initAllTask() {
+        mTasks.clear();
+        LinearLayout container = (LinearLayout) findViewById(R.id.taskContainer);
+        for (int i = 0; i < container.getChildCount(); i++) {
+            ProgressBarTask task = new ProgressBarTask((ProgressBar) container.getChildAt(0), i);
+            mTasks.add(task);
+        }
+    }
+
+
+    public void stopAll(View v) {
+        for (ProgressBarTask task : mTasks) {
+            task.cancel(true);
+        }
+    }
+
+    public void startNormal(View v) {
+        startInternal(null);
+    }
+
+    public void startSerial(View v) {
+        startInternal(AsyncTask.SERIAL_EXECUTOR);
+    }
+
+    public void startThreadPool(View v) {
+        startInternal(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    public void startCachedThreadPool(View v) {
+        startInternal(Executors.newCachedThreadPool());
+    }
+
+    private void startInternal(Executor executor) {
+        for (ProgressBarTask task : mTasks) {
+            if (executor == null) {
+                task.execute();
+            } else {
+                task.executeOnExecutor(executor);
+            }
+        }
+    }
 
     private class ProgressBarTask extends AsyncTask<Void, Void, Void> {
 
@@ -109,7 +95,7 @@ public class CodeAsyncTask extends Activity {
 
             while (mProgress < 100) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
