@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:orientation="vertical"
+    android:layout_height="match_parent" android:clickable="true" android:onClick="hidePopWindow">
 
 
     <Button android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="popTop"
-        android:text="POP TOP" android:id="@+id/pop_top"/>
-
-    <Button android:layout_alignParentBottom="true" android:id="@+id/pop_bottom"
+        android:onClick="popUp"
+        android:text="POP" />
+    <Button android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="popBottom"
-        android:text="POP BOTTOM" android:layout_marginBottom="100dip"/>
+        android:onClick="popUp"
+        android:text="POP" />
+    <Button android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="popUp"
+        android:text="POP" />
+    <Button android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="popUp"
+        android:text="POP" />
+    <Button android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="popUp"
+        android:text="POP" />
+    <Button android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="popUp"
+        android:text="POP" />
 
-</RelativeLayout>
+
+</LinearLayout>

@@ -16,7 +16,7 @@ import com.asysbang.developerheavn.R;
 /**
  * Created by karl on 16-1-20.
  */
-public class CodePopupWindow extends Activity{
+public class CodePopupWindow extends Activity {
 
     private PopupWindow mWindow;
 
@@ -24,29 +24,23 @@ public class CodePopupWindow extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui_popup_window);
-
-        Button b = (Button) findViewById(R.id.pop_bottom);
-        TextView textView = new TextView(this);
-        mWindow = new PopupWindow(LayoutInflater.from(this).inflate(R.layout.simple_view,null), LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
+        mWindow = new PopupWindow(LayoutInflater.from(this).inflate(R.layout.simple_view, null), LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
         mWindow.setTouchable(false);
         mWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_launcher));
     }
 
-    public void popTop(View v) {
-        System.out.println("=========popTop=====" + v.getId());
+    public void popUp(View v) {
         if (mWindow.isShowing()) {
-            mWindow.update(v.getLeft(), v.getBottom(), LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+            mWindow.update(v.getLeft(), v.getBottom(), LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         } else {
-            mWindow.showAsDropDown(v);
+            mWindow.showAtLocation(v,0,v.getLeft(), v.getBottom());
         }
     }
 
-    public void popBottom(View v) {
-        System.out.println("=========popBottom=====" + v.getId());
+    public void hidePopWindow(View v) {
+        System.out.println("=========hidePopWindow=====");
         if (mWindow.isShowing()) {
-            mWindow.update(v.getLeft(), v.getBottom(), LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        } else {
-            mWindow.showAsDropDown(v);
+            mWindow.dismiss();
         }
     }
 }

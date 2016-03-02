@@ -33,6 +33,24 @@
                 <category android:name="asysbang.category.CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".manager.CodeManager"
+            android:label="@string/code_manager">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".threadpool.DemoThreadPool"
+            android:label="@string/thread_pool">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
