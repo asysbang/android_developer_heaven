@@ -37,3 +37,66 @@
 
     怎么传递参数
 
+
+
+========================================
+1.getInstance 是否要考虑线程安全？？？移动端是否会出现同时多个请求
+
+    Calendar.getInstance   不可以用来参考吗，这个每次都返回新的实例对象
+
+    CallList  InCallVideoCallCallbackNotifier  GalleryBitmapPool 直接在static 时 new的
+
+
+    public static synchronized xxxx getInstance 的有
+
+    InCallPresenter.java
+    ContactInfoCache
+    ResourceHelper
+    CookieSyncManager.java  !!!系统的类
+
+
+==================
+AuthenticationCache.java
+RefreshStatusMonitor.java
+
+LocalBroadcastManager.java
+
+    Analytics.java
+    private static Tracker sInstance;
+
+    private Analytics() {
+    }
+
+    public static Tracker getInstance() {
+        synchronized (Analytics.class) {
+            if (sInstance == null) {
+                sInstance = new StubTracker();
+            }
+        }
+        return sInstance;
+    }
+
+    public static void setTracker(Tracker t) {
+        synchronized (Analytics.class) {
+            sInstance = t;
+        }
+    }
+
+
+    TelecomAdapter.java  没做任何处理
+    Index.java
+
+
+
+
+
+2.线程池使用
+   cached  共4处
+   fixed   共9处 其中去掉重复类的 只有6处
+
+   高低优先级的线程池可以参考 Camera2 下面的 AndroidPriorityThread.java
+
+
+
+
+
