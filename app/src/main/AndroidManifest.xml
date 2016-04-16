@@ -51,6 +51,35 @@
                 <category android:name="asysbang.category.CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".notification.DemoNotification"
+            android:label="@string/notification">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".queue.DemoQueue"
+            android:label="@string/queue">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.DemoCustomStyle"
+            android:label="@string/ui_custom_style">
+            <intent-filter>
+                <action android:name="asysbang.action.CODE" />
+                <category android:name="asysbang.category.CODE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.MainService"/>
     </application>
 
 </manifest>

@@ -100,3 +100,9 @@ LocalBroadcastManager.java
 
 
 
+3.浮动通知  类似 微信 qq的那种通知
+
+
+
+
+

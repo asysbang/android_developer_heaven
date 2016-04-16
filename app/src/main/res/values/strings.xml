@@ -4,4 +4,7 @@
     <string name="code_ui_popup_window">Popup Window</string>
     <string name="code_manager">Manager</string>
     <string name="thread_pool">Thread Pool</string>
+    <string name="notification">Notification</string>
+    <string name="queue">Queue LinkedList</string>
+    <string name="ui_custom_style">Custom Style</string>
 </resources>
